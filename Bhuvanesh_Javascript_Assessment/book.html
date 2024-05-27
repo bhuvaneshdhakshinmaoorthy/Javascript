@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./book.css">
+    <title>Library Book Form | Book Details</title>
+</head>
+<body>
+    <section id="settingdata">
+        <form action="">
+            <fieldset>
+                Book Details
+            </fieldset>
+
+        <br>
+
+        <!-- Book Name -->
+        <div>
+            <label for="">Book Name:
+            </label> <input type="text" placeholder="Enter the book name" id="bookname" onkeypress="validbookname()" required>
+            <label for="" style="color: red; visibility: hidden;" id="lbookname">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Department -->
+        <div>
+            <label for="">Department : </label>
+            <select name="Department" id="bookdepartment" onselect="validbookdepartment()">
+                <option value="Civil" selected>Civil</option>
+                <option value="Mechanical" >Mechanical</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+                <option value="CSE">CSE</option>
+            </select>
+        </div>
+        <br>
+
+
+        <!-- Rack Number -->
+        <div>
+            <label for="">Rack Number:
+            </label><input type="number" placeholder="Enter the rack number  " id="racknumber" onkeypress="validracknumber()" required>
+            <label for="" style="color: red; visibility: hidden;" id="lracknumber">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Author Name -->
+        <div>
+            <label for="">Author Name:
+            </label> <input required type="text" placeholder="Enter the authour name" id="authorname" onkeypress="validauthorname()">
+            <label for="" style="color: red; visibility: hidden;" id="lauthorname">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Published Year -->
+        <div>
+            <label for="">Published Year:
+            </label> <input required type="number" placeholder="Enter the published year" id="publishedyear" onkeypress="validpublishedyear()">
+            <label for="" style="color: red; visibility: hidden;" id="lpublishedyear">Invalid</label>
+        </div>
+        <br>
+
+        <!--Publisher Name -->
+        <div>
+            <label for="">Publisher Name:
+            </label> <input required type="text" placeholder="Enter the publisher name" id="publishername" onkeypress="validpublishername()">
+            <label for="" style="color: red; visibility: hidden;" id="lpublishername">Invalid</label>
+        </div>
+        <br>
+
+        <!--Authour Email -->
+        <div>
+            <label for="">Authour Email ID :
+            </label> <input required type="email" placeholder="Enter authour email ID " id="authourmail" onkeypress="validauthouremail()">
+            <label for="" style="color: red; visibility: hidden;" id="lauthourmail">Invalid</label>
+        </div>
+        <br>
+
+        <!--Authour Phone -->
+        <div>
+            <label for="">Authour Phone Number:
+            </label><input required type="number" placeholder="Enter authour phone number" id="authourphone" onkeypress="validauthourphone()">
+            <label for="" style="color: red; visibility: hidden;" id="lauthourphone">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Authour Address -->
+        <div>
+            <label for="">Authour Address:
+                <textarea required name="address" placeholder="Enter your address here" cols="20" rows="4" id="authoraddress" onkeypress="validauthouraddress()"></textarea>
+            <!-- </label><textarea type="textarea" placeholder="Enter your address here" cols="20" row="4" id="authoraddress" onkeypress="validauthouraddress()"></textarea> -->
+            <br>
+            <label for="" style="color: red; visibility: hidden;" id="lauthoraddress">Invalid</label>
+            <br>
+            <br>
+            <label for="">Pincode:</label>
+            <input type="number" id="authourpin" onkeypress="validauthourpin()">
+            <label for="" id="lauthourpin"></label>
+        </div>
+        <br>
+
+        <!-- ISPN -->
+        <div>
+            <label for="">ISBN Number:
+            </label><input type="text" placeholder="Enter the ISBN" id="isbn" onkeypress="validispn()">
+            <label for="" style="color: red; visibility: hidden;" id="lisbn">Invalid</label>
+        </div>
+        <br>      
+
+        <!--Book Photo -->
+        <div>
+            <label for="">Upload Book Photo: </label>
+            <input type="file" id="photo">
+        </div>
+        <br>
+
+        <Button type="submit">Submit</Button>
+        </form>
+    </section>
+
+    <br>
+    <br>
+
+    <section id="displayeduser" style="display: none;">
+        <table>
+            <tr>
+                <th>Requirements </th>
+                <th>Book Details</th>
+            </tr>
+            <tr>
+                <th>Book Name</th>
+                <td><Span id="rbookname"></Span></td>
+            </tr>
+            <tr>
+                <th>Department</th>
+                <td><Span id="rbookdepartment"></Span></td>
+            </tr>
+            <tr>
+                <th>Rack Number</th>
+                <td><Span id="rracknumber"></Span></td>
+            </tr>
+            <tr>
+                <th>Authour Name</th>
+                <td><Span id="rauthourname"></Span></td>
+            </tr>
+            <tr>
+                <th>Published year</th>
+                <td><Span id="rpublishedyear"></Span></td>
+            </tr>
+            <tr>
+                <th>Publisher Name</th>
+                <td><Span id="rpublishername"></Span></td>
+            </tr>
+            <tr>
+                <th>Authour Email ID</th>
+                <td><Span id="rauthouremail"></Span></td>
+            </tr>
+            <tr>
+                <th>Authour Phone Number</th>
+                <td><Span id="rauthourphone"></Span></td>
+            </tr>
+            <tr>
+                <th>Authour Address</th>
+                <td><Span id="rauthouraddress"></Span></td>
+            </tr>
+            <tr>
+                <th>PIN</th>
+                <td><Span id="rauthourpin"></Span></td>
+            </tr>
+            
+            <tr>
+                <th>ISBN</th>
+                <td><Span id="risbn"></Span></td>
+            </tr>
+
+            <tr>
+                <th>Book Pic</th>
+                <td><Span id="rphoto"></Span></td>
+            </tr>
+        </table>
+    </section>
+    <script  src="./book.js"></script>
+</body>
+</html>

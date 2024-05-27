@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./user.css">
+    <title>Library Book Form | User Details</title>
+</head>
+<body>
+    <section id="setdata">
+        <form action="" id="user_form">
+            <fieldset>
+                Login form for new user
+            </fieldset>
+        <br>
+        <!-- First Name -->
+        <div>
+            <label for="">First Name: </label> 
+            <input type="text" placeholder="Enter your first name" id="firstname" onkeypress="validfirstname()" required>
+            <label for="" style="color: red; visibility: hidden;" id="lfirstname">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Last Name -->
+        <div>
+            <label for="">Last Name:
+            </label> <input type="text" placeholder="Enter your last name" id="lastname" onkeypress="validlastname()" required>
+            <label for="" style="color: red; visibility: hidden;" id="llastname">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Email -->
+        <div>
+            <label for="">Email ID :
+            </label> <input type="email" placeholder="Enter your email ID " id="email" onkeypress="validemail()" required>
+            <label for="" style="color: red; visibility: hidden" id="lemail">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Phone -->
+        <div>
+            <label for="">Phone Number: </label><input type="number" placeholder="Enter your phone number" id="phone" onkeypress="validphone()" required>
+            <label for="" style="color: red; visibility: hidden;" id="lphone">Invalid</label>
+        </div>
+        <br>
+
+        <!-- Present Address -->
+        <div>
+            <label for="">Present Address:</label>
+            <textarea id="address1" rows="4" cols="25" onkeypress="validpresentaddress()"></textarea>
+            <!-- <input type="textarea" placeholder="Enter your address here" rows="4" cols="25"  id="presentaddress" onkeypress="validpresentaddress()" required> -->
+            <label for="" style="color: red; visibility: hidden;" id="lpresentaddress">Invalid</label>
+            <br>
+            <br>
+            <label for="">Pincode:</label>
+            <input type="number" id="pin1" onkeypress="validpin1()" required>
+            <label for="" id="lpin1" style="color: red; visibility: hidden;" >Valid</label>
+        </div>
+        <br>
+
+        <!-- Permanent Address -->
+        <div>
+            <label for="">Permanent Address:</label>
+            <!-- <textarea id="address1" rows="4" cols="25" onkeypress="validpresentaddress()()"></textarea> -->
+            <textarea cols="25" rows="4" id="permanentaddress" onkeypress="validpermanentaddress()"></textarea>
+            <label for="" style="color: red; visibility: hidden;" id="lpermanentaddress">Invalid</label>
+            <br>
+            <br>
+            <label for="">Pincode:</label>
+            <input type="number" id="pin2" onkeypress="validpin2()">
+            <label for="" style="color: red; visibility: hidden;" id="lpin2">Invalid</label>
+            <!-- <span id="samepin"></span> -->
+        </div>
+        <br>
+
+        <label for="">Both are same address</label>
+        <input type="checkbox" id="sameaddress">
+        <br>
+        <br>
+        <!-- Gender -->
+        <div>
+            <label for="">Gender: </label>
+            <select name="Gender" id="gender">
+                <option name="Gender" value="Male" selected>Male</option>
+                <option name="Gender" value="Female">Female</option>
+                <option name="Gender" value="Others">Others</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Department -->
+        <div>
+            <label for="">Department: </label>
+            <select name="Department" id="department" >
+                <option name="Department" value="Civil" selected>Civil</option>
+                <option name="Department" value="Mechanical" >Mechanical</option>
+                <option name="Department" value="EEE">EEE</option>
+                <option name="Department" value="ECE">ECE</option>
+                <option name="Department" value="CSE">CSE</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Photo -->
+        <div>
+            <label for="">Upload your Photo: </label>
+            <input id="photo" type="file" required>
+        </div>
+        <br>
+
+        <Button type="submit">Submit</Button>
+        </form>
+    </section>
+
+    <br>
+    <br>
+
+    <section id="displayuser" style="display: none;">
+        <table>
+            <tr>
+                <th>Requirements </th>
+                <th>User Details</th>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td><Span id="rfirstname"></Span></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><Span id="rlastname"></Span></td>
+            </tr>
+            <tr>
+                <th>Email ID</th>
+                <td><Span id="remail"></Span></td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td><Span id="rphone"></Span></td>
+            </tr>
+            <tr>
+                <th>Present Address</th>
+                <td><Span id="rpresentAddress"></Span></td>
+            </tr>
+            <tr>
+                <th>Present Address PIN</th>
+                <td><Span id="rpin1"></Span></td>
+            </tr>
+            <tr>
+                <th>Permanent Address</th>
+                <td><Span id="rpermanentaddress"></Span></td>
+            </tr>
+            <tr>
+                <th>Permanent Address PIN</th>
+                <td><Span id="rpin2"></Span></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td><Span id="rgender"></Span></td>
+            </tr>
+            <tr>
+                <th>Department</th>
+                <td><Span id="rdepartment"></Span></td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td><Span id="rphoto" ></Span></td>
+            </tr>
+        </table>
+    </section>
+    <script src="./user.js"></script>
+</body>
+</html>

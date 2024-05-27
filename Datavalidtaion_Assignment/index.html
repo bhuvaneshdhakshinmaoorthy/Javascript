@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Html 7th Question</title>
+</head>
+
+<body>
+    <form id="main_form" style="display: block;">
+        <tr>
+            <td>
+
+                <fieldset>
+                    <h1><strong>Login Form</strong></h1>
+                </fieldset>
+                <p><label for="name">Name</label>
+                    <input type="text" placeholder="FirstName" id="name" onkeypress="validName()">
+                    <label for="" id="lname" style="color: red; visibility: hidden;">Invalid</label>
+                    <!-- <input type="text" placeholder="LastName" id="lastname" onkeypress="validLastName()">
+                            <label for="" id="llastname" style="color: red; visibility: hidden;">Invalid</label>
+                        </p> -->
+                <p><label for="email">Email</label>
+                    <input type="email" placeholder="Email" id="email" onkeypress="validEmail()">
+                    <label for="" id="lemail" style="color: red; visibility: hidden;">Invalid</label>
+
+                </p>
+                <p>
+                    <label for="mobile">Phone Number</label>
+                    <input type="" placeholder="10-digit number" id="mobile" onkeypress="validMobile()">
+                    <label for="" id="lmobile" style="color: red; visibility: hidden;">Invalid</label>
+
+                </p>
+                <p><label for="pwd">Password</label>
+                    <input type="password" name="" placeholder="Password" id="password" onkeypress="validPassword()">
+                    <label for="" id="lpassword" style="color: red; visibility: hidden;">Invalid</label>
+
+
+                </p>
+                <p>
+                    Gender <br>
+                    <!-- <label for="Gender"></label> <br> -->
+                    <input type="radio" name="gender" value="male" checked id="male"> <label for="male">Male</label>
+                    <br>
+                    <input type="radio" name="gender" value="female" id="female"> <label for="female">Female</label>
+                    <br>
+                    <input type="radio" name="gender" value="gender" id="disclose"> <label for="disclose">Not wish
+                        to disclose</label> <br>
+                </p>
+                <p>
+                    <label for="address1">Present address:</label> <br>
+                    <textarea name="address" id="address1" rows="4" cols="25" onkeypress="validAddress()"></textarea>
+                    <label for="" id="laddress1" style="color: red; visibility: hidden;">Invalid</label>
+                    <br>
+                    <label for="" onkeypress="validPIN1()">PIN</label>
+                    <input type="number" id="pin1">
+                    <label for="" id="lpin1" style="color: red; visibility: hidden;">Invalid</label>
+
+
+                </p>
+                <input type="checkbox" id="sameAddress" name="sameAddress">
+                <label for="sameAddress">Both address are same</label><br>
+                <p>
+                    <label for="address">Permanent address:</label> <br>
+                    <textarea name="address" rows="4" cols="25" id="permanent_address"></textarea>
+                    <br>
+                    <label for="">PIN</label>
+                    <input type="number" id="permanent_pin">
+                    <label for="" id="laddress2" style="color: red; visibility: hidden;">Invalid</label>
+
+                </p>
+
+                <p>
+                    <label>PAN: <input id="pan" type="text" placeholder="Enter your PAN number"></label>
+                </p>
+                <p>
+                    Date of Birth <br>
+                    <input id="dob" type="date">
+                </p>
+                <p>
+                    Time <br>
+                    <input id="time" type="time">
+                </p>
+                <p>
+                    Languages <br>
+                    <input type="checkbox" name=languages[] value="tamil" checked>Tamil <br>
+                    <input type="checkbox" name=languages[] value="english">English <br>
+                    <input type="checkbox" name=languages[] value="french">French
+                </p>
+                <p>
+                    Select your field of interest: <br>
+                    <select name="fieldofinterest" multiple size="3" id="fieldofinterest">
+                        <option value="music">Music</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="badmiton">Badmiton</option>
+                        <option value="movies">Movies</option>
+                        <option value="books">Books</option>
+                    </select>
+                </p>
+                <p>
+                    Enter the wallet balance <br>
+                    <input id="balance" type="number" value="">
+                </p>
+                <p>
+                    Upload your photo <br>
+                    <input type="file" value="photo">
+                </p>
+                <p>
+                    Upload your resume <br>
+                    <input type="file" value="resume">
+                </p>
+                <p>
+                    <button type="submit">Submit</button>
+                    <!-- <input id="submit" type="submit" value="Submit"> -->
+                    <button id="btn" type="reset">Reset</button>
+                </p>
+            </td>
+        </tr>
+    </form>
+
+
+    <!-- style="visibility: hidden;" -->
+    <div id="displaydata" style="display: none;">
+        <table>
+            <!-- Header Section -->
+            <tr>
+                <th>SECTION</th>
+                <th colspan="3">USER DETAILS</th>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- User name -->
+            <tr>
+                <th>USER NAME</th>
+                <td colspan="3"> <span id="r_name"></span> <span id="lastname"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- Email ID -->
+            <tr>
+                <th>EMAIL ID</th>
+                <td colspan="3"><span id="r_email"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- Phone Number -->
+            <tr>
+                <th>PHONE NUMBER</th>
+                <td colspan="3"><span id="r_mobile"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- Password -->
+            <tr>
+                <th>PASSWORD</th>
+                <td colspan="3"><span id="r_password"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- Gender -->
+            <tr>
+                <th>GENDER</th>
+                <td colspan="3"><span id="r_gender"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- DOB -->
+            <tr>
+                <th>DATE OF BIRTH</th>
+                <td colspan="3"><span id="r_dob"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- Birth Time -->
+            <tr>
+                <th>BIRTH TIME</th>
+                <td colspan="3"><span id="r_time"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <!-- Present Address -->
+            <tr>
+                <th>PRESENT ADDRESS</th>
+                <td colspan="3"><span id="r_presentaddress"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <tr>
+                <th>PRESENT ADDRESS PIN</th>
+                <td colspan="3"><span id="r_presentpin"></span></td>
+            </tr>
+
+            <!-- Permanent Address -->
+            <tr>
+                <th>PERMANENT ADDRESS</th>
+                <td colspan="3"><span id="r_permanent"></span></td>
+                <!-- <td></td>
+                    <td></td> -->
+            </tr>
+
+            <tr>
+                <th>PRESENT ADDRESS PIN</th>
+                <td colspan="3"><span id="r_permanentpin"></span></td>
+            </tr>
+
+            <!-- Languages -->
+            <tr>
+                <th>LANGUAGES</th>
+
+                <td colspan="3"><span id="r_languages"></span></td>
+            </tr>
+            <!-- Wallet Balance -->
+            <tr>
+                <th>YOUR WALLET BALANCE</th>
+                <td colspan="3"><span id="r_balance"></span></td>
+            </tr>
+
+            <!-- Field Of Interest -->
+            <tr>
+                <th>FIELD OF INTEREST</th>
+                <td colspan="3"><span id="r_fieldofinterest"></span></td>
+
+            </tr>
+            <!-- Upload your picture image -->
+            <!-- <tr>
+                    <th></th>
+                    <td colspan="3"></td>
+                </tr> -->
+
+            <!-- Upload your picture -->
+            <!-- <tr>
+                    <th>YOUR RESUME</th>
+                    <td colspan="3"></td>
+                </tr> -->
+        </table>
+    </div>
+    <script src="./setdata.js"></script>
+</body>
+
+</html>

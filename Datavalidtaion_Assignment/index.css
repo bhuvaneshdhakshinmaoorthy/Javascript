@@ -1,0 +1,32 @@
+#main_form
+{
+    width: 40%;
+    border: 1px solid black;
+    /* width: 300px; */
+    margin: auto;
+    padding: 20px;
+    /* flex-direction: row; */
+}
+fieldset
+{
+    text-align: center;
+}
+
+
+table{
+    border: 1px solid black;
+    margin: auto;
+    border-collapse: collapse;
+    padding: 10px;
+}
+td, th
+{
+    border: 1px solid black;
+    text-align: left;
+    padding: 10px;
+}
+
+#displaydata th
+{
+    padding: 20px;
+}
